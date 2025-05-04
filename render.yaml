@@ -1,0 +1,21 @@
+
+services:
+  - type: web
+    name: jarvis-mail
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: GMAIL_CLIENT_ID
+        sync: false
+      - key: GMAIL_CLIENT_SECRET
+        sync: false
+      - key: GMAIL_REFRESH_TOKEN
+        sync: false
+      - key: HUGGINGFACE_TOKEN
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OCR_MODE
+        value: "on"
